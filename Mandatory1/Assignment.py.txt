@@ -1,0 +1,97 @@
+# Opgave 1
+
+print()
+print('Opgave 1')
+Directors = {"Benny", "Hans", "Tine", "Mille", "Torben", "Troels", "Søren"}
+
+Management = {"Tine", "Trunte", "Rane"}
+
+Employees = {"Niels", "Anna", "Tine", "Ole", "Trunte", "Bent", "Rane", "Allan", "Stine", "Claus", "James", "Lars"}
+
+print('Directors board not on Employees:')
+print(set(set(Directors).difference(Employees)))
+
+print('Both on directors board and Employees:')
+print(set(set(Directors).intersection(Employees)))
+
+print('Number of people both on directors board and Management:')
+print(len(list(set(Management).intersection(Directors))))
+
+print('Both on Employees and Management:')
+print(set(set(Management).intersection(Employees)))
+
+print('Both on directors board and Management:')
+print(set(set(Management).intersection(Directors)))
+
+print('Members on all three lists:')
+print(set(set(Directors).intersection(Employees).intersection(Management)))
+
+print('Employees not on Management or Directors board:')
+print(set(set(Employees).difference(Directors).difference(Management)))
+
+# Opgave 2
+print()
+print('Opgave 2')
+print("From Dictionary to tuples: ")
+GreekLetters = {'a': 'Alpha', 'b' : 'Beta', 'g': 'Gamma'}
+
+TupleGreekLetters = {(key, i) for key, i in GreekLetters.items()}
+
+print(TupleGreekLetters)
+
+# Opgave 3
+print()
+print('Opgave 3')
+
+set1 = {'a', 'e', 'i', 'o', 'u', 'y', 'k'}
+set2 = {'a', 'e', 'i', 'o', 'u', 'y', 'æ' ,'ø', 'å'}
+
+unionSet = set1.union(set2) 
+print("Union Set:")
+print(unionSet)
+
+symDifferenceSet = set1.symmetric_difference(set2)
+print("Symmetric Difference Set: ")
+print(symDifferenceSet)
+
+differenceSet = set1.difference(set2)
+print("Difference Set: ")
+print(differenceSet)
+
+disjointSet = set1.intersection(set2)
+print("Disjoint Set: ")
+print(disjointSet)
+
+# Opgave 4
+print()
+print('Opgave 4')
+print("From String to tuple")
+
+
+MonthDict={"JAN" : 1,
+        "FEB" : 2 ,
+        "MAR" : 3,
+        "APR" : 4,
+        "MAY" : 5,
+        "JUN" : 6,
+        "JUL" : 7,
+        "AUG" : 8,
+        "SEP" : 9,
+        "OCT" : 10,
+        "NOV" : 11,
+        "DEC" : 12
+}
+
+str = "8-MAR-85"
+print(str)
+
+def splitStr(str):
+    newStr= str.split("-")
+    day = int(newStr[0])
+    month = MonthDict[newStr[1]]
+    year = int("19" + newStr[2])
+    
+    tuple1 = (year,month,day)
+    return tuple1
+
+print(splitStr(str))
